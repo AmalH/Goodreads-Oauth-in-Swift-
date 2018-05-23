@@ -4,18 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>OAuthSwift.xcscheme</key>
+		<key>GoodreadsOauth.xcscheme_^#shared#^_</key>
 		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>Pods-GoodreadsOauth.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
+			<key>orderHint</key>
+			<integer>0</integer>
 		</dict>
 	</dict>
-	<key>SuppressBuildableAutocreation</key>
-	<dict/>
 </dict>
 </plist>
