@@ -13,14 +13,15 @@ import SafariServices
 class ViewController:OAuthViewController {
     
     var oauthswift: OAuthSwift?
-    lazy var internalWebViewController: WebViewController = {
+   
+    /*   lazy var internalWebViewController: WebViewController = {
         let controller = WebViewController()
         
         controller.view = UIView(frame: UIScreen.main.bounds) // needed if no nib or not loaded from storyboard
         controller.delegate = self
         controller.viewDidLoad() // allow WebViewController to use this ViewController as parent to be presented
         return controller
-    }()
+    }()*/
 }
 
 extension ViewController: OAuthWebViewControllerDelegate {
@@ -49,9 +50,9 @@ extension ViewController: OAuthWebViewControllerDelegate {
 
 extension ViewController{
     
-    
-    
-  
+    @IBAction func goodReadsAuthActiob(_ sender: Any) {
+        doOAuthGoodreads()
+    }
     
     // MARK: Goodreads
     func doOAuthGoodreads() {
@@ -64,29 +65,27 @@ extension ViewController{
         )
         self.oauthswift=oauthswift
         oauthswift.allowMissingOAuthVerifier = true
-        /*if internalWebViewController.parent == nil {
-         self.addChildViewController(internalWebViewController)
-         }*/
-        oauthswift.authorizeURLHandler = getURLHandler()//OAuthSwiftOpenURLExternally.sharedInstance
+        oauthswift.authorizeURLHandler = getURLHandler()
         let _ = oauthswift.authorize(
-            withCallbackURL: URL(string: "oauth-swift://oauth-callback/goodreads")!,
+            withCallbackURL: URL(string: "OAuthSample://oauth-callback/goodreads")!,
             success: { credential, response, parameters in
                 self.showTokenAlert(name: "", credential: credential)
-                self.GoodreadsOauthGoodreads(oauthswift)
+                self.testOauthGoodreads(oauthswift)
         },
             failure: { error in
-                print(error.localizedDescription, terminator: "")
+                print( "ERROR ERROR: \(error.localizedDescription)", terminator: "")
         }
         )
         
     }
     
-    func GoodreadsOauthGoodreads(_ oauthswift: OAuth1Swift) {
+    func testOauthGoodreads(_ oauthswift: OAuth1Swift) {
         let _ = oauthswift.client.get(
             "https://www.goodreads.com/api/auth_user",
             success: { response in
                 // Most Goodreads methods return XML, you'll need a way to parse it.
                 let dataString = response.string!
+                self.AlertView("cred",dataString)
                 print(dataString)
         }, failure: { error in
             print(error)
@@ -133,43 +132,4 @@ extension ViewController{
         return OAuthSwiftOpenURLExternally.sharedInstance
     }
 }
-
-
-
-/*enum URLHandlerType {
- case `internal`
- case external
- }
- 
- 
- struct FormViewControllerData {
- var key: String
- var secret: String
- var handlerType: URLHandlerType
- }
- 
- // Little utility class to wait on data
- class Semaphore<T> {
- let segueSemaphore = DispatchSemaphore(value: 0)
- var data: T?
- 
- func waitData(timeout: DispatchTime? = nil) -> T? {
- if let timeout = timeout {
- let _ = segueSemaphore.wait(timeout: timeout) // wait user
- } else {
- segueSemaphore.wait()
- }
- return data
- }
- 
- func publish(data: T) {
- self.data = data
- segueSemaphore.signal()
- }
- 
- func cancel() {
- segueSemaphore.signal()
- }
- }*/
-
 

@@ -11,38 +11,22 @@
 		5427BA06207EA46900341F66 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5427B9F7207EA46800341F66 /* AppDelegate.swift */; };
 		5427BA07207EA46900341F66 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5427B9F8207EA46800341F66 /* Info.plist */; };
 		5427BA08207EA46900341F66 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5427B9FB207EA46800341F66 /* LaunchScreen.xib */; };
-		5427BA0A207EA46900341F66 /* LoginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5427BA00207EA46800341F66 /* LoginCoordinator.swift */; };
 		5427BA0B207EA46900341F66 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5427BA02207EA46900341F66 /* ViewController.swift */; };
 		5427BA0D207EA46900341F66 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5427BA05207EA46900341F66 /* Images.xcassets */; };
 		BF0DE122208566390037B92F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF0DE120208566390037B92F /* Main.storyboard */; };
-		BF96A97A2082C9C60017A578 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF96A9792082C9C50017A578 /* Session.swift */; };
-		EE822FA20FB61A32CF7F26B4 /* Pods_AuthSample_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2AD725021ED4DE029BC72E1 /* Pods_AuthSample_Example.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		05EC0EA20D5AEA531F89A653 /* Pods-BookLog_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookLog_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LoginKit_Tests/Pods-LoginKit_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		13BC745B9954E69A0B8E8521 /* Pods-AuthSample_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AuthSample_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AuthSample_Example/Pods-AuthSample_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		1708C22D56F179894DAC4396 /* Pods-BookLog_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookLog_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LoginKit_Tests/Pods-LoginKit_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		48E0725879F0D992AFA386B7 /* Pods-BookLog_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookLog_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-LoginKit_Example/Pods-LoginKit_Example.release.xcconfig"; sourceTree = "<group>"; };
 		5427B9F7207EA46800341F66 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5427B9F8207EA46800341F66 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5427B9FC207EA46800341F66 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		5427BA00207EA46800341F66 /* LoginCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginCoordinator.swift; sourceTree = "<group>"; };
 		5427BA02207EA46900341F66 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		5427BA05207EA46900341F66 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		58B505C851C3CF4D6C557E6C /* Pods-GoodreadsOauth.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoodreadsOauth.release.xcconfig"; path = "Pods/Target Support Files/Pods-GoodreadsOauth/Pods-GoodreadsOauth.release.xcconfig"; sourceTree = "<group>"; };
-		5D777AB480B84963E28686AA /* Pods-BookLog_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookLog_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LoginKit_Example/Pods-LoginKit_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		5ED45CC8D90477331D17341A /* Pods-BookLog_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookLog_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BookLog_Example/Pods-BookLog_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* GoodreadsOauth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoodreadsOauth.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F53B7C21D95E3BFAC81CDC5 /* Pods_GoodreadsOauth.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GoodreadsOauth.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		70F64F7DDD98CDB9461CD238 /* Pods-GoodreadsOauth.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoodreadsOauth.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GoodreadsOauth/Pods-GoodreadsOauth.debug.xcconfig"; sourceTree = "<group>"; };
-		9C70A3274DFB5B41C84D6DB9 /* Pods-BookLog_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookLog_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BookLog_Tests/Pods-BookLog_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		BF0DE121208566390037B92F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Views/Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		BF96A9792082C9C50017A578 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
-		C2AD725021ED4DE029BC72E1 /* Pods_AuthSample_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AuthSample_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C790D62162E9D9E3BF5203AA /* Pods-BookLog_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookLog_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-BookLog_Example/Pods-BookLog_Example.release.xcconfig"; sourceTree = "<group>"; };
-		D11E7C58AC19280BD423E4EC /* Pods-BookLog_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookLog_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BookLog_Tests/Pods-BookLog_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		F31925720B87CD21F2027F2F /* Pods-AuthSample_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AuthSample_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-AuthSample_Example/Pods-AuthSample_Example.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,7 +34,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EE822FA20FB61A32CF7F26B4 /* Pods_AuthSample_Example.framework in Frameworks */,
 				3072988033555118FF2D170B /* Pods_GoodreadsOauth.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -61,16 +44,6 @@
 		1591CA9F0B25B9874639D586 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				5D777AB480B84963E28686AA /* Pods-BookLog_Example.debug.xcconfig */,
-				48E0725879F0D992AFA386B7 /* Pods-BookLog_Example.release.xcconfig */,
-				05EC0EA20D5AEA531F89A653 /* Pods-BookLog_Tests.debug.xcconfig */,
-				1708C22D56F179894DAC4396 /* Pods-BookLog_Tests.release.xcconfig */,
-				5ED45CC8D90477331D17341A /* Pods-BookLog_Example.debug.xcconfig */,
-				C790D62162E9D9E3BF5203AA /* Pods-BookLog_Example.release.xcconfig */,
-				9C70A3274DFB5B41C84D6DB9 /* Pods-BookLog_Tests.debug.xcconfig */,
-				D11E7C58AC19280BD423E4EC /* Pods-BookLog_Tests.release.xcconfig */,
-				13BC745B9954E69A0B8E8521 /* Pods-AuthSample_Example.debug.xcconfig */,
-				F31925720B87CD21F2027F2F /* Pods-AuthSample_Example.release.xcconfig */,
 				70F64F7DDD98CDB9461CD238 /* Pods-GoodreadsOauth.debug.xcconfig */,
 				58B505C851C3CF4D6C557E6C /* Pods-GoodreadsOauth.release.xcconfig */,
 			);
@@ -80,7 +53,6 @@
 		412E2DC98D7B4F381F58A5C4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				C2AD725021ED4DE029BC72E1 /* Pods_AuthSample_Example.framework */,
 				6F53B7C21D95E3BFAC81CDC5 /* Pods_GoodreadsOauth.framework */,
 			);
 			name = Frameworks;
@@ -102,15 +74,6 @@
 				5427B9FB207EA46800341F66 /* LaunchScreen.xib */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		5427B9FF207EA46800341F66 /* Utils */ = {
-			isa = PBXGroup;
-			children = (
-				BF96A9792082C9C50017A578 /* Session.swift */,
-				5427BA00207EA46800341F66 /* LoginCoordinator.swift */,
-			);
-			path = Utils;
 			sourceTree = "<group>";
 		};
 		5427BA01207EA46900341F66 /* Controllers */ = {
@@ -153,7 +116,6 @@
 				5427BA04207EA46900341F66 /* Assets */,
 				5427B9F6207EA46800341F66 /* Configs */,
 				5427BA01207EA46900341F66 /* Controllers */,
-				5427B9FF207EA46800341F66 /* Utils */,
 				5427B9FA207EA46800341F66 /* Views */,
 			);
 			path = GoodreadsOauth;
@@ -275,8 +237,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				5427BA0B207EA46900341F66 /* ViewController.swift in Sources */,
-				BF96A97A2082C9C60017A578 /* Session.swift in Sources */,
-				5427BA0A207EA46900341F66 /* LoginCoordinator.swift in Sources */,
 				5427BA06207EA46900341F66 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -399,7 +359,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
-				INFOPLIST_FILE = AuthSample/Configs/info.plist;
+				INFOPLIST_FILE = GoodreadsOauth/Configs/info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks $(CONFIGURATION_BUILD_DIR)";
 				MODULE_NAME = ExampleApp;
@@ -417,7 +377,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
-				INFOPLIST_FILE = AuthSample/Configs/info.plist;
+				INFOPLIST_FILE = GoodreadsOauth/Configs/info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks $(CONFIGURATION_BUILD_DIR)";
 				MODULE_NAME = ExampleApp;
