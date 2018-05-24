@@ -14,14 +14,6 @@ class ViewController:OAuthViewController {
     
     var oauthswift: OAuthSwift?
    
-    /*   lazy var internalWebViewController: WebViewController = {
-        let controller = WebViewController()
-        
-        controller.view = UIView(frame: UIScreen.main.bounds) // needed if no nib or not loaded from storyboard
-        controller.delegate = self
-        controller.viewDidLoad() // allow WebViewController to use this ViewController as parent to be presented
-        return controller
-    }()*/
 }
 
 extension ViewController: OAuthWebViewControllerDelegate {
@@ -85,7 +77,7 @@ extension ViewController{
             success: { response in
                 // Most Goodreads methods return XML, you'll need a way to parse it.
                 let dataString = response.string!
-                self.AlertView("cred",dataString)
+                self.showAlertView(title: "cred",message: dataString)
                 print(dataString)
         }, failure: { error in
             print(error)
