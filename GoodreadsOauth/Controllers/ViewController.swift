@@ -9,6 +9,7 @@
 import UIKit
 import OAuthSwift
 import SafariServices
+import SWXMLHash
 
 class ViewController:OAuthViewController {
     
@@ -61,7 +62,7 @@ extension ViewController{
         let _ = oauthswift.authorize(
             withCallbackURL: URL(string: "OAuthSample://oauth-callback/goodreads")!,
             success: { credential, response, parameters in
-                self.showTokenAlert(name: "", credential: credential)
+                self.showTokenAlert(name: "Oauth Credentials", credential:  credential)
                 self.testOauthGoodreads(oauthswift)
         },
             failure: { error in
@@ -75,10 +76,16 @@ extension ViewController{
         let _ = oauthswift.client.get(
             "https://www.goodreads.com/api/auth_user",
             success: { response in
-                // Most Goodreads methods return XML, you'll need a way to parse it.
+                /** parse the returned xml to read user id **/
                 let dataString = response.string!
-                self.showAlertView(title: "cred",message: dataString)
-                print(dataString)
+                var xml = SWXMLHash.parse(dataString)
+                let userID  =  xml["GoodreadsResponse"]["user"].element?.attribute(by: "id")?.text
+                print("---- XML -----:\(xml)--------")
+                print("---- ROW -----:\(dataString)--------")
+                print("---- ID -----:\(userID)--------")
+                self.showAlertView(title: "ID of authorised user", message:  "user_id:\(userID). You can now use it for Goodreads API rest calls..")
+                /** save the userID to .. **/
+                 // ...
         }, failure: { error in
             print(error)
         }
@@ -104,12 +111,12 @@ extension ViewController{
     func getURLHandler() -> OAuthSwiftURLHandlerType {
         if #available(iOS 9.0, *) {
             let handler = SafariURLHandler(viewController: self, oauthSwift: self.oauthswift!)
-            handler.presentCompletion = {
+           /* handler.presentCompletion = {
                 print("Safari presented")
             }
             handler.dismissCompletion = {
                 print("Safari dismissed")
-            }
+            }*/
             handler.factory = { url in
                 let controller = SFSafariViewController(url: url)
                 // Customize it, for instance
