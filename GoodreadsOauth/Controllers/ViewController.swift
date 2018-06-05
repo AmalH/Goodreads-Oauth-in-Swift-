@@ -15,43 +15,16 @@ class ViewController:OAuthViewController {
     
     var oauthswift: OAuthSwift?
    
-}
-
-extension ViewController: OAuthWebViewControllerDelegate {
-    
-    func oauthWebViewControllerDidPresent() {
-        
-    }
-    func oauthWebViewControllerDidDismiss() {
-        
-    }
-    
-    func oauthWebViewControllerWillAppear() {
-        
-    }
-    func oauthWebViewControllerDidAppear() {
-        
-    }
-    func oauthWebViewControllerWillDisappear() {
-        
-    }
-    func oauthWebViewControllerDidDisappear() {
-        // Ensure all listeners are removed if presented web view close
-        oauthswift?.cancel()
-    }
-}
-
-extension ViewController{
-    
     @IBAction func goodReadsAuthActiob(_ sender: Any) {
         doOAuthGoodreads()
     }
     
-    // MARK: Goodreads
     func doOAuthGoodreads() {
+        
+        /** create an instance of oauth1 **/
         let oauthswift = OAuth1Swift(
-            consumerKey:        "ByJPtxvVIlsWKlizEBbQ",
-            consumerSecret:     "DizrvZRKwSyCz6B5NA8NEItcKwtuzTASGnvaXNxLVTs",
+            consumerKey:        "your-api-key-here",
+            consumerSecret:     "your-api-secret-here",
             requestTokenUrl:    "https://www.goodreads.com/oauth/request_token",
             authorizeUrl:       "https://www.goodreads.com/oauth/authorize?mobile=1",
             accessTokenUrl:     "https://www.goodreads.com/oauth/access_token"
@@ -59,6 +32,8 @@ extension ViewController{
         self.oauthswift=oauthswift
         oauthswift.allowMissingOAuthVerifier = true
         oauthswift.authorizeURLHandler = getURLHandler()
+        
+        /** authorize **/
         let _ = oauthswift.authorize(
             withCallbackURL: URL(string: "OAuthSample://oauth-callback/goodreads")!,
             success: { credential, response, parameters in
@@ -69,23 +44,25 @@ extension ViewController{
                 print( "ERROR ERROR: \(error.localizedDescription)", terminator: "")
         }
         )
-        
     }
     
     func testOauthGoodreads(_ oauthswift: OAuth1Swift) {
         let _ = oauthswift.client.get(
             "https://www.goodreads.com/api/auth_user",
             success: { response in
+                
                 /** parse the returned xml to read user id **/
                 let dataString = response.string!
-                var xml = SWXMLHash.parse(dataString)
-                let userID  =  xml["GoodreadsResponse"]["user"].element?.attribute(by: "id")?.text
-                print("---- XML -----:\(xml)--------")
-                print("---- ROW -----:\(dataString)--------")
-                print("---- ID -----:\(userID)--------")
+                let xml = SWXMLHash.parse(dataString)
+                let userID  =  (xml["GoodreadsResponse"]["user"].element?.attribute(by: "id")?.text)!
+                print("---- RAW:\(dataString)")
+                print("---- XML:\(xml)")
+                print("---- USER ID:\(userID)")
                 self.showAlertView(title: "ID of authorised user", message:  "user_id:\(userID). You can now use it for Goodreads API rest calls..")
+                
                 /** save the userID to .. **/
-                 // ...
+                // ...
+                
         }, failure: { error in
             print(error)
         }
@@ -111,12 +88,12 @@ extension ViewController{
     func getURLHandler() -> OAuthSwiftURLHandlerType {
         if #available(iOS 9.0, *) {
             let handler = SafariURLHandler(viewController: self, oauthSwift: self.oauthswift!)
-           /* handler.presentCompletion = {
-                print("Safari presented")
-            }
-            handler.dismissCompletion = {
-                print("Safari dismissed")
-            }*/
+            /* handler.presentCompletion = {
+             print("Safari presented")
+             }
+             handler.dismissCompletion = {
+             print("Safari dismissed")
+             }*/
             handler.factory = { url in
                 let controller = SFSafariViewController(url: url)
                 // Customize it, for instance
@@ -130,5 +107,6 @@ extension ViewController{
         }
         return OAuthSwiftOpenURLExternally.sharedInstance
     }
+    
 }
 
